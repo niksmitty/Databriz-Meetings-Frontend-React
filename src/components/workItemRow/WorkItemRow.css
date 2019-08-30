@@ -1,0 +1,17 @@
+.work-item-row {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    height: 32px;
+    position: relative;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+
+.work-item-row:hover {
+    background-color: #eee;
+}
+
+.work-item-row .title {
+    position: relative;
+    top: -8px;
+}
