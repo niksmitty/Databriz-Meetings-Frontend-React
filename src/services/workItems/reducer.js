@@ -1,7 +1,8 @@
 import { FETCH_WORKITEMS } from "./actionTypes";
 
-const initialState = {
-    workItems: []
+export const initialState = {
+    workItems: [],
+    workItemsInfo: {}
 };
 
 export default function (state = initialState, action) {
