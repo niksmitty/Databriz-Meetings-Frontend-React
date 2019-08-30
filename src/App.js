@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Provider as ReduxProvider } from 'react-redux';
+import configureStore from "./services/store";
+
+// import ProjectsPage from "./components/projects/ProjectsPage";
+import WorkItemsPage from "./components/workItems/WorkItemsPage";
+
+const reduxStore = configureStore();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ReduxProvider store={reduxStore}>
+          <div className="App">
+              {/*<ProjectsPage />*/}
+              <WorkItemsPage />
+          </div>
+      </ReduxProvider>
   );
 }
 
