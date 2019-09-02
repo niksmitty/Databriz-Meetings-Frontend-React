@@ -1,6 +1,6 @@
 import { FETCH_PROJECTS } from "./actionTypes";
 
-const initialState = {
+export const initialState = {
     projects: []
 };
 

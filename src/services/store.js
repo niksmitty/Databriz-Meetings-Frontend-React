@@ -3,9 +3,9 @@ import thunkMiddleware from 'redux-thunk';
 import { apiMiddleware } from 'redux-api-middleware';
 // import { createLogger } from 'redux-logger';
 
-import rootReducer from './reducers'
+import rootReducer, { initialStates } from './reducers'
 
-export default function configureStore(initialState = {}) {
+export default function configureStore(initialState = initialStates) {
     const middlewares = [thunkMiddleware, apiMiddleware];
 
     let composeEnhancers = compose;
