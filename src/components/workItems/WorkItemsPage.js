@@ -7,6 +7,8 @@ import { makeRevision, resetShouldUpdate } from "../../services/revision/actions
 import PageHeader from "../pageHeader/PageHeader";
 import WorkItemRow from "../workItemRow/WorkItemRow";
 
+import Loader from 'react-loader-spinner';
+
 class WorkItemsPage extends Component {
 
     componentDidMount() {
@@ -24,7 +26,10 @@ class WorkItemsPage extends Component {
     }
 
     render() {
-        const { workItemsInfo, revision, fetchWorkItems, resetShouldUpdate } = this.props;
+        const {
+            workItemsInfo, isLoading, error, revision,
+            fetchWorkItems, resetShouldUpdate
+        } = this.props;
 
         if (revision.should_update) {
             resetShouldUpdate();
@@ -44,7 +49,13 @@ class WorkItemsPage extends Component {
         return (
             <div>
                 <PageHeader text="Work Items" />
-                <div>{workItemRows}</div>
+                {error && <span>{error.message}</span>}
+                {isLoading ?
+                    <Loader type="MutatingDots"
+                            color="#00BFFF"
+                            height={80}
+                            width={80} /> :
+                    <div>{workItemRows}</div>}
             </div>
         )
     }
@@ -53,6 +64,8 @@ class WorkItemsPage extends Component {
 
 const mapStateToProps = state => ({
     workItemsInfo: state.workItems.workItemsInfo,
+    isLoading: state.workItems.isLoading,
+    error: state.workItems.error,
     revision: state.revision.revision
 });
 
