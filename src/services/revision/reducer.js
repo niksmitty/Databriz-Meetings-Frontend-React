@@ -18,8 +18,8 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 revision: {
-                    should_update: false,
-                    revision: state.revision.revision
+                    ...state.revision,
+                    should_update: false
                 }
             };
         default:

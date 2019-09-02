@@ -52,7 +52,6 @@ class WorkItemsPage extends Component {
 }
 
 const mapStateToProps = state => ({
-    workItems: state.workItems.workItems,
     workItemsInfo: state.workItems.workItemsInfo,
     revision: state.revision.revision
 });
