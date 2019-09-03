@@ -28,7 +28,8 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 isLoading: false,
-                workItemsInfo: action.payload
+                workItemsInfo: action.payload,
+                error: null
             };
         case FETCH_WORKITEMS_FAILURE:
             return {
