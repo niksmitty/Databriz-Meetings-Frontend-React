@@ -41,7 +41,9 @@ class WorkItemsPage extends Component {
             let workItems = workItemsInfo["user_work_items"];
             workItemRows = workItems.map(workItem => {
                 return (
-                    <WorkItemRow key={workItem.id} title={workItem.title} />
+                    <div key={workItem.id} className="col-sm-6 col-md-4">
+                        <WorkItemRow key={workItem.id} workItem={workItem} />
+                    </div>
                 )
             });
         }
@@ -55,7 +57,7 @@ class WorkItemsPage extends Component {
                             color="#00BFFF"
                             height={80}
                             width={80} /> :
-                    <div>{workItemRows}</div>}
+                    <div className="row mt-3">{workItemRows}</div>}
             </div>
         )
     }

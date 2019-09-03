@@ -1,17 +1,56 @@
 .work-item-row {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    height: 32px;
-    position: relative;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     cursor: pointer;
+    height: 120px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 500ms ease-out;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
 }
 
 .work-item-row:hover {
     background-color: #eee;
 }
 
-.work-item-row .title {
+.work-item-row .header-title {
     position: relative;
-    top: -8px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    min-height: 48px;
+    padding: 0 0.35em;
+    font-weight: 500;
+}
+
+.workitem-details {
+    display: flex;
+    list-style: none;
+    padding: 0 0.35em;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.workitem-details .workitem-details-item {
+    flex: 1;
+}
+
+.workitem-details .workitem-details-item .value {
+    display: block;
+    color: #00bfff;
+    vertical-align: bottom;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-align: left;
+}
+
+.workitem-details .workitem-details-item .title {
+    display: block;
+    margin-top: -4px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    text-align: left;
 }
