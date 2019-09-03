@@ -12,8 +12,10 @@ function App() {
   return (
       <ReduxProvider store={reduxStore}>
           <div className="App">
-              {/*<ProjectsPage />*/}
-              <WorkItemsPage />
+              <div className="container-fluid mt-4">
+                  {/*<ProjectsPage />*/}
+                  <WorkItemsPage />
+              </div>
           </div>
       </ReduxProvider>
   );
