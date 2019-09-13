@@ -1,1 +1,1 @@
-export const meetingsAPI = 'http://localhost:8080/api';
+export const meetingsAPI = 'http://api.meetings.databriz.egin.al/api';
